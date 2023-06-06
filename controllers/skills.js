@@ -18,12 +18,14 @@ function newSkill(req, res) {
 
 function show(req, res) {
   res.render('skills/show', {
+    title: 'Skill',
     skill: Skill.getOne(req.params.id)
   });
 }
 
 function index(req, res) {
   res.render('skills/index', {
+    title: 'Skills', // this line is what was needed to clear up that error in your index of ' title is undefined'
     skills: Skill.getAll()
   });
 }
